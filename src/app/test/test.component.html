@@ -1,0 +1,141 @@
+<!--
+<form (ngSubmit)="onSubmit()" #myForm="ngForm" class="form">
+
+  <div class="mb-4 pb-2">
+    <div class="form-outline form-white">
+      <input
+        type="text"
+        name="nom"
+        class="form-control form-control-lg"
+        placeholder="Username"
+        [(ngModel)]="formData.nom"
+        required
+        minlength="3"
+        maxlength="20"
+        #username="ngModel"
+        [ngClass]="{ 'is-invalid': formData.submitted && username.errors }"
+      />
+      <div class="invalid-feedback" *ngIf="username.errors && formData.submitted">
+        <div *ngIf="username.errors['required']">Username is required</div>
+        <div *ngIf="username.errors['minlength']">
+          Username must be at least 3 characters
+        </div>
+        <div *ngIf="username.errors['maxlength']">
+          Username must be at most 20 characters
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required [(ngModel)]="formData.name">
+    <div *ngIf="myForm.controls['name'].errors?.['required']" class="error-message">Name is required.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required [(ngModel)]="formData.email">
+    <div *ngIf="myForm.controls['email'].errors?.['required']" class="error-message">Email is required.</div>
+  </div>
+
+
+  <button type="submit">Submit</button>
+</form>
+ -->
+<form
+  *ngIf="!isSuccessful"
+  name="userForm"
+  class="form"
+  (ngSubmit)="onSubmit()"
+  #f="ngForm"
+  novalidate
+>
+<h3 class="fw-normal mb-5">Détails du propriétaire ou représentant légal</h3>
+  <div class="col-md-6 mb-4 pb-2">
+    <div class="form-outline">
+      <input type="text" required id="nomentreprise" class="form-control form-control-lg" placeholder="Nom de l&#39;entreprise" [(ngModel)]="formData.nomentreprise"
+             name="nomentreprise"  #nomentreprise="ngModel"  [ngClass]="{ 'is-invalid': f.submitted && username.errors }"/>
+      <div class="invalid-feedback" *ngIf="nomentreprise.errors && f.submitted">
+        <div *ngIf="nomentreprise.errors['required']">Nom entreprise is required</div>
+
+      </div>
+    </div>
+  </div>
+<div class="mb-4 pb-2">
+  <div class="form-outline form-white">
+    <input
+      type="text"
+      name="nom"
+      class="form-control form-control-lg"
+      placeholder="Username"
+      [(ngModel)]="formData.nom"
+      required
+      minlength="3"
+      maxlength="20"
+      #username="ngModel"
+      [ngClass]="{ 'is-invalid': f.submitted && username.errors }"
+    />
+    <div class="invalid-feedback" *ngIf="username.errors && f.submitted">
+      <div *ngIf="username.errors['required']">Username is required</div>
+      <div *ngIf="username.errors['minlength']">
+        Username must be at least 3 characters
+      </div>
+      <div *ngIf="username.errors['maxlength']">
+        Username must be at most 20 characters
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-5 mb-4 pb-2">
+    <div class="form-outline form-white">
+      <input
+        type="email"
+        name="email"
+        [(ngModel)]="formData.email"
+        required
+        class="form-control form-control-lg"
+        placeholder="email"
+        email
+        #email="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && email.errors }"
+      />
+
+      <div class="invalid-feedback" *ngIf="email.errors && f.submitted">
+        <div *ngIf="email.errors['required']">Email is required</div>
+        <div *ngIf="email.errors['email']">
+          Email must be a valid email address
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-7 mb-4 pb-2">
+    <div class="form-outline form-white">
+      <input
+        type="password"
+        class="form-control form-control-lg"
+        placeholder="password"
+        name="password"
+        [(ngModel)]="formData.password"
+        required
+        minlength="6"
+        #password="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && password.errors }"
+      />
+
+      <div class="invalid-feedback" *ngIf="password.errors && f.submitted">
+        <div *ngIf="password.errors['required']">Password is required</div>
+        <div *ngIf="password.errors['minlength']">
+          Password must be at least 6 characters</div>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-dark btn-lg btn-block" >Sign Up</button>
+      </div>
+      <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+        Signup failed!<br />{{ errorMessage }}
+      </div>
+    </div>
+  </div>
+</div></form>
+
