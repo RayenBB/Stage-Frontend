@@ -1,0 +1,5 @@
+.container{
+  transition: margin 0.3s ease; /* Smooth animation */
+  margin-top: 0;
+  margin-right: 100px;
+}
