@@ -1,0 +1,11 @@
+
+
+.content {
+  flex: 1; /* Allow content to expand and take available space */
+  /*padding: 20px; !* Add padding for spacing *!*/
+}
+
+.footer {
+  /* Footer styles */
+  margin-top: auto; /* Push the footer to the bottom of the container */
+}

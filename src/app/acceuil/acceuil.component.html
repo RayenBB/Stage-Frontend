@@ -1,0 +1,131 @@
+<head>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<!-- BootStrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<!-- BootStrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/mdb-ui-kit@5.2.2/css/mdb.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/mdb-ui-kit@5.2.2/js/mdb.min.js"></script>
+</head>
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid justify-content-between " mdbCollapse>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    <div  class="d-flex align-items-center">
+
+      <button type="button" class="btn btn-light px-3 me-2" routerLink="/login" (click)="onLoginClick()"><i class="fas fa-user-circle" ></i>
+        Login
+      </button>
+      <button type="button" class="btn btn-light px-3 me-2"  routerLink="/register">
+        Sign Up
+      </button>
+      <a
+        class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
+
+        id="navbarDropdownMenuLink"
+        role="button"
+        data-mdb-toggle="dropdown"
+        aria-expanded="false"
+        [mat-menu-trigger-for]="about">
+        <img
+          src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
+          class="rounded-circle"
+          height="22"
+          alt=""
+          loading="lazy"
+        />
+      </a>
+      <mat-menu #about="matMenu" class="dropdown-menu" >
+        <button mat-menu-item >My profile</button>
+        <button mat-menu-item >Settings</button>
+        <button mat-menu-item >Logout</button>
+      </mat-menu>
+
+
+    </div>
+
+
+
+  </div>
+</nav>
+
+
+
+<!-- Sidebar -->
+  <nav
+    id="sidebarMenu"
+    class="collapse "
+  >
+    <div class="position-sticky">
+      <div class="list-group list-group-flush mx-3 mt-4">
+        <a
+          href="#"
+          class="list-group-item list-group-item-action py-2 ripple"
+          aria-current="true"
+        >
+          <i class="fas fa-tachometer-alt fa-fw me-3"></i
+          ><span>Main dashboard</span>
+        </a>
+        <a
+          href="/user"
+          class="list-group-item list-group-item-action py-2 ripple active"
+        >
+          <i class="fa fa-home fa-fw me-3"></i
+          ><span>Acceuil</span>
+        </a>
+        <a
+          href="#"
+          class="list-group-item list-group-item-action py-2 ripple"
+        ><i class="fas fa-phone-volume fa-fw me-3"></i><span>Appels d'offres</span></a
+        >
+        <a
+          href="#"
+          class="list-group-item list-group-item-action py-2 ripple"
+        ><i class="fa-regular fa-folder-open fa-fw me-3"></i>
+        <span>Achat des dossiers</span></a
+        >
+
+
+        <a
+          href="#"
+          class="list-group-item list-group-item-action py-2 ripple"
+        ><i class="fas fa-building fa-fw me-3"></i
+        ><span>Partners</span></a
+        >
+        <a
+          href="#"
+          class="list-group-item list-group-item-action py-2 ripple"
+        ><i class="fas fa-calendar fa-fw me-3"></i
+        ><span>Calendar</span></a
+        >
+        <a
+          href="#"
+          class="list-group-item list-group-item-action py-2 ripple"
+        ><i class="fas fa-users fa-fw me-3"></i><span>Users</span></a
+        >
+        <a
+          href="#"
+          class="list-group-item list-group-item-action py-2 ripple"
+        >
+          <i class="bi bi-question-circle-fill fa-fw me-3"></i><span>Service assistant</span>
+        </a>
+        <a
+          href="#"
+          class="list-group-item list-group-item-action py-2 ripple"
+        ><i class="fas fa-money-bill fa-fw me-3"></i><span>Sales</span></a
+        >
+      </div>
+    </div>
+  </nav>
+  <!-- Sidebar -->
