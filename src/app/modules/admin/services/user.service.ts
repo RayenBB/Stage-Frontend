@@ -12,17 +12,19 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
   getAllUsers(): Observable<any[]> {
-    return this.http.get<User[]>(baseUrl+'/all',{withCredentials:true});
+    return this.http.get<User[]>(baseUrl+'/all',{
+      withCredentials: true,
+    });
   }
 
   getUser(id: any): Observable<any> {
-    return this.http.get(`${baseUrl}/find/${id}`);
+    return this.http.get(`${baseUrl}/findbyid/${id}`);
+  }
+  getUserbymail(mail: any): Observable<any> {
+    return this.http.get(`${baseUrl}/findbymail/${mail}`);
   }
 
-  getSimilarUsers(type: string, severity: string, environment: string): Observable<any[]> {
-    const url = `${baseUrl}/${type}/${severity}/${environment}`;
-    return this.http.get<User[]>(url);
-  }
+
 
   createUser(data: any): Observable<any> {
     return this.http.post(baseUrl, data);
@@ -40,7 +42,5 @@ export class UserService {
     return this.http.delete(baseUrl);
   }
 
-  findByTitle(title: any): Observable<User[]> {
-    return this.http.get<User[]>(`${baseUrl}?title=${title}`);
-  }
+
 }

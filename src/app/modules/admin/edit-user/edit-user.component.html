@@ -195,22 +195,14 @@
                       </div>
                     </div>
 
-                    <div class="form-check d-flex justify-content-start mb-4 pb-3">
-                      <input class="form-check-input me-3" type="checkbox" value="" id="form2Example3c" />
-                      <label class="form-check-label text-white" for="form2Example3c">
-                        I do accept the <a href="#!" class="text-white"><u>Terms and Conditions</u></a> of your site.
-                      </label>
-                    </div>
+
 
                     <div class="form-group">
-                      <button type="submit" class="btn btn-dark btn-lg btn-block" >Sign Up</button>
+                      <button type="submit" class="btn btn-dark btn-lg btn-block" >Edit</button>
                     </div>
                     <br>
-                    <h5 class="h7" routerLink="/login">Vous avez déjà un compte ?</h5>
 
-                    <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
-                      Signup failed!<br />{{ errorMessage }}
-                    </div>
+
 
 
 
@@ -218,9 +210,7 @@
                   </div>
                 </div>
               </div></form>
-            <div class="alert alert-success" *ngIf="isSuccessful">
-              Your registration is successful!
-            </div>
+
           </div>
         </div>
       </div>

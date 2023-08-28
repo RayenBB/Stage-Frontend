@@ -11,7 +11,7 @@ import {UserService} from "../services/user.service";
 export class GetUserComponent implements OnInit{
   Users!: Array<User>;
   errorMessage!: string;
-  public currentUser!: User;
+  currentUser!: User;
   currentIndex = -1;
 
 
@@ -52,6 +52,6 @@ export class GetUserComponent implements OnInit{
   setActiveUser(User: User, index: number): void {
     this.currentUser = User;
     this.currentIndex = index;
-    this.router.navigate(['/update', User.id]);
+    this.router.navigate(['admin/update', User.id]);
   }
 }

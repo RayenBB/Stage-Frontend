@@ -58,7 +58,7 @@ export class EditUserComponent implements OnInit{
 
 
   goBack(): void {
-    this.router.navigate(['/user']); // Navigate back to the previous page
+    this.router.navigate(['admin/user']); // Navigate back to the previous page
   }
 
 }
